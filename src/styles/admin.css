@@ -1,0 +1,80 @@
+/* Admin panel shared styles (desktop/tablet first) */
+
+.ad-page { display: flex; flex-direction: column; gap: 1.25rem; }
+.ad-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; }
+.ad-head h1 { font-size: 1.45rem; }
+.ad-head p { color: var(--stone-500); font-size: 0.875rem; margin-top: 0.15rem; }
+.ad-head-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+.ad-card { background: var(--white); border: 1px solid var(--stone-200); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
+.ad-card-pad { padding: 1.25rem; }
+.ad-card-head { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1rem 1.25rem; border-bottom: 1px solid var(--stone-100); flex-wrap: wrap; }
+.ad-card-head h3 { font-size: 1rem; }
+
+.ad-toolbar { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; padding: 0.875rem 1rem; border-bottom: 1px solid var(--stone-100); }
+.ad-toolbar .form-control { width: auto; min-width: 150px; padding: 0.5rem 0.75rem; font-size: 0.875rem; }
+.ad-toolbar .ad-search { min-width: 240px; flex: 1; max-width: 360px; }
+.ad-toolbar-spacer { flex: 1; }
+
+.ad-table-wrap { overflow-x: auto; }
+.ad-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+.ad-table th { background: var(--stone-50); font-size: 0.72rem; padding: 0.65rem 0.875rem; }
+.ad-table td { padding: 0.7rem 0.875rem; font-size: 0.875rem; }
+.ad-table td.num, .ad-table th.num { text-align: right; white-space: nowrap; }
+.ad-table td small { display: block; color: var(--stone-500); font-size: 0.75rem; }
+.ad-table .ad-actions { display: flex; gap: 0.35rem; justify-content: flex-end; flex-wrap: wrap; }
+.ad-table tr.is-muted td { opacity: 0.55; }
+.ad-table tr.is-clickable { cursor: pointer; }
+.ad-mono { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.82rem; }
+
+.ad-pager { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 0.75rem 1rem; border-top: 1px solid var(--stone-100); font-size: 0.82rem; color: var(--stone-500); flex-wrap: wrap; }
+.ad-pager div { display: flex; gap: 0.35rem; }
+
+.ad-tabs { display: flex; gap: 0.25rem; border-bottom: 1px solid var(--stone-200); overflow-x: auto; }
+.ad-tabs button, .ad-tabs a { background: none; border: none; padding: 0.65rem 1rem; font-weight: 600; font-size: 0.9rem; color: var(--stone-500); border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap; }
+.ad-tabs .is-active { color: var(--navy); border-bottom-color: var(--saffron); }
+
+.ad-stats { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 0.75rem; }
+.ad-stat { background: var(--white); border: 1px solid var(--stone-200); border-radius: var(--radius-md); padding: 0.9rem 1rem; }
+.ad-stat span { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--stone-500); }
+.ad-stat strong { display: block; font-size: 1.35rem; color: var(--navy); margin-top: 0.15rem; }
+
+.ad-days { display: flex; gap: 0.3rem; flex-wrap: wrap; }
+.ad-days button { border: 1.5px solid var(--stone-200); background: var(--white); border-radius: var(--radius-sm); padding: 0.4rem 0.6rem; font-size: 0.8rem; font-weight: 600; color: var(--stone-600); }
+.ad-days button.is-on { background: var(--navy); border-color: var(--navy); color: var(--white); }
+
+.ad-split { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 1.25rem; align-items: start; }
+.ad-kv { display: grid; grid-template-columns: 140px 1fr; gap: 0.45rem 0.75rem; font-size: 0.875rem; }
+.ad-kv dt { color: var(--stone-500); }
+.ad-kv dd { color: var(--stone-800); font-weight: 500; word-break: break-word; }
+
+/* Route stops editor */
+.ad-stops { display: flex; flex-direction: column; gap: 0.5rem; }
+.ad-stop { display: grid; grid-template-columns: 34px 1.2fr 1.4fr 110px 110px 90px 90px auto; gap: 0.5rem; align-items: center; padding: 0.6rem; border: 1px solid var(--stone-200); border-radius: var(--radius-md); background: var(--white); }
+.ad-stop .form-control { padding: 0.45rem 0.6rem; font-size: 0.85rem; }
+.ad-stop-num { width: 28px; height: 28px; border-radius: 50%; background: var(--navy); color: var(--saffron); font-weight: 700; font-size: 0.8rem; display: flex; align-items: center; justify-content: center; }
+.ad-stop-head { display: grid; grid-template-columns: 34px 1.2fr 1.4fr 110px 110px 90px 90px auto; gap: 0.5rem; padding: 0 0.6rem; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--stone-500); letter-spacing: 0.04em; }
+.ad-stop-actions { display: flex; gap: 0.15rem; }
+@media (max-width: 1100px) {
+  .ad-stop, .ad-stop-head { grid-template-columns: 34px 1fr 1fr; }
+  .ad-stop-head { display: none; }
+}
+
+/* Fare matrix */
+.ad-matrix { border-collapse: separate; border-spacing: 0; font-size: 0.85rem; }
+.ad-matrix th, .ad-matrix td { padding: 0.4rem; border-bottom: 1px solid var(--stone-100); text-align: center; }
+.ad-matrix th { background: var(--stone-50); font-size: 0.75rem; text-transform: none; letter-spacing: 0; white-space: nowrap; }
+.ad-matrix th.row { text-align: left; position: sticky; left: 0; z-index: 1; }
+.ad-matrix input { width: 96px; padding: 0.4rem 0.5rem; text-align: right; border: 1.5px solid var(--stone-200); border-radius: var(--radius-sm); font-size: 0.85rem; }
+.ad-matrix input.is-dirty { border-color: var(--saffron); background: var(--saffron-light); }
+.ad-matrix input.is-invalid { border-color: var(--coral); background: var(--coral-light); }
+.ad-matrix td.na { color: var(--stone-300); background: var(--stone-50); }
+
+.ad-qr-preview { width: 220px; aspect-ratio: 1; object-fit: contain; border: 1px solid var(--stone-200); border-radius: var(--radius-md); background: var(--white); padding: 0.5rem; }
+.ad-dropzone { border: 2px dashed var(--stone-300); border-radius: var(--radius-md); padding: 1rem; text-align: center; color: var(--stone-500); font-size: 0.85rem; }
+
+.ad-perm-table td, .ad-perm-table th { text-align: center; }
+.ad-perm-table td:first-child, .ad-perm-table th:first-child { text-align: left; }
+.ad-json { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.75rem; background: var(--stone-50); border-radius: var(--radius-sm); padding: 0.5rem; white-space: pre-wrap; word-break: break-word; max-height: 220px; overflow: auto; }
+
+@media (max-width: 1100px) { .ad-split { grid-template-columns: 1fr; } }
